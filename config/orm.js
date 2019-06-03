@@ -7,6 +7,7 @@
 // Export the ORM object in `module.exports`.
 
 var connection = require("./connection.js");
+console.log("ORM.js connection")
 
 //create an object with the methods to do with the burger data
 //orm.all = all data from database
@@ -21,7 +22,8 @@ var orm = {
         connection.query("SELECT * from " + tableInput + ";", function (err,
             result) {
             if (err) throw err;
-            cb(result)
+            cb(result);
+            console.log("LoggingORM")
         })
     }
 }

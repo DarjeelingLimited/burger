@@ -1,4 +1,35 @@
 {{!-- Setup the `index.handlebars` to have the template that Handlebars can render onto. --}}
 {{!-- Create a button in `index.handlebars` that will submit the user input into the database. --}}
 
-<p>Successfully connected to server!</p>
+{{!-- <p>Successfully connected to server!</p> --}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-m-12 text-center">
+            <h1>EAT DA BURGER!</h1>
+        </div>
+        <div class="col-m-6 text-center">
+            <div class="row">
+                <!--looping thru the burger data, and for each piece of burger data, it will run the code to post this.id, this.burger_name-->
+                <!--create a button so that when it's clicked, it will send this.id back to the survey unless this.devoured = true -->
+                {{#each burger_data}}
+                {{#unless this.devoured}}
+                <div class="col-m-9 text center">
+                    <pre>{{this.id}}. {{this.burger_name}}</pre>
+                </div>
+                <div class="col-m-3 text-center">
+                    <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
+                        <input type="hidden" name="burger_id" type="text" value={{this.id}}>
+                    <button type=" submit" class="btn"> NOM NOM </button>
+                    </form>
+
+                </div>
+                {{/unless}}
+                {{/each}}
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

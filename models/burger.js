@@ -6,6 +6,7 @@
 //requires the ORM for use with the burgers database
 
 var orm = require("../config/orm.js");
+console.log("loggingBurger.js")
 
 //"burgers" = the tableinput
 //function(res) will be sent into the controllers.js file (routes) 
