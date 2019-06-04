@@ -20,7 +20,7 @@
                 <div class="col-m-3 text-center">
                     <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
                         <input type="hidden" name="burger_id" type="text" value={{this.id}}>
-                    <button type=" submit" class="btn"> NOM NOM </button>
+                        <button type=" submit" class="btn"> NOM NOM </button>
                     </form>
 
                 </div>
@@ -30,6 +30,30 @@
 
         </div>
 
+        <div class="col-m-6 text center">
+            {{#each burger_data}}
+            {{#if this.devoured}}
+            <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}">
+            <!--create button-->
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+</div>
+
+<!-- adding data to the database-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-m-12 text-center enter_section">
+            <form action="/burgers/create" method="POST">
+                <input type="text" name="burger_name" class="form-control" value="" id="enter_text">
+                <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
+            </form>
+            <p>Enter in a burger that you want to devour.</p>
+            <!-- Need to add create method into orm.js-->
+        </div>
     </div>
 
 </div>
