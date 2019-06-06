@@ -23,7 +23,7 @@ https://github.com/DarjeelingLimited/burger
 
    * [Express-handlebars](https://www.npmjs.com/package/express-handlebars)
 
-     * [MysQL](https://www.npmjs.com/package/mysql)
+   * [MySQL](https://www.npmjs.com/package/mysql)
    
 
 ## Getting started
