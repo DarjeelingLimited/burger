@@ -3,7 +3,13 @@ body {
     background-image: url("https://images7.alphacoders.com/597/597506.png");
     background-size: cover;
     background-position: fixed;
-    background-color: #5555
+    margin: 20px;
   }
 
-  
+  .newInput, .btn, .form-control {
+    font-family: "Trebuchet MS", "Helvetica", "sans-serif";
+  } 
+
+  .form-control2{
+    border-style: none;
+  }

@@ -3,6 +3,23 @@
 
 {{!-- <p>Successfully connected to server!</p> --}}
 
+<!-- adding data to the database-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-m-12 text-center">
+            <p><img src="https://fontmeme.com/permalink/190606/49c3b55f6b0d5a06ba996bc856555594.png" alt="gabriel-weiss-friends-font-font" border="0"><div class=""></div></p>
+              <form action="/burgers/create" method="POST">
+                <input type="text" name="burger_name" class="form-control" value="" id="enter_text">
+                <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
+            </form>
+            
+            <!-- Need to add create method into orm.js-->
+        </div>
+    </div>
+
+</div>
+<br>
 <div class="container">
     <div class="row">
         <div class="col-m-6 text-center">
@@ -12,7 +29,7 @@
                 {{#each burger_data}}
                 {{#unless this.devoured}}
                 <div class="col-m-9 text center">
-                    <pre>{{this.id}}. {{this.burger_name}}</pre>
+                    <pre class="newInput">{{this.burger_name}}</pre>
                 </div>
                 <div class="col-m-3 text-center">
                     <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
@@ -26,12 +43,15 @@
             </div>
 
         </div>
-
+<br>
+<br>
         <div class="col-m-6 text center">
+            <p><img src="https://fontmeme.com/permalink/190608/6264ff3613301e8ac0fb3fd84d62db13.png" alt="bobs-burgers-tv-show-font" border="0"><p>
             {{#each burger_data}}
             {{#if this.devoured}}
-            <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}">
+            <input class="form-control2" type="text" placeholder="{{this.burger_name}}">
             <!--create button-->
+            <br>
             {{/if}}
             {{/each}}
         </div>
@@ -39,19 +59,3 @@
 
 </div>
 
-<!-- adding data to the database-->
-
-<div class="container">
-    <div class="row">
-        <div class="col-m-12 text-center enter_section">
-            <p><img src="https://fontmeme.com/permalink/190606/49c3b55f6b0d5a06ba996bc856555594.png" alt="gabriel-weiss-friends-font-font" border="0">.</p>
-              <form action="/burgers/create" method="POST">
-                <input type="text" name="burger_name" class="form-control" value="" id="enter_text">
-                <button type="submit" class="btn btn-primary" id="text-enter-button">SUBMIT</button>
-            </form>
-            
-            <!-- Need to add create method into orm.js-->
-        </div>
-    </div>
-
-</div>
